@@ -42,6 +42,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Soenneker.Dtos.Entities" Version="3.0.3" />
+      <PackageReference Include="Soenneker.Dtos.Entities" Version="4.0.4" />
     </ItemGroup>
 </Project>
