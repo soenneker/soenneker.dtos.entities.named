@@ -1,11 +1,10 @@
-﻿using Soenneker.Tests.Unit;
-using Xunit;
+using Soenneker.Tests.Unit;
 
 namespace Soenneker.Dtos.Entities.Named.Tests;
 
 public sealed class NamedEntityDtoTests : UnitTest
 {
-    [Fact]
+    [Test]
     public void Default()
     {
 
