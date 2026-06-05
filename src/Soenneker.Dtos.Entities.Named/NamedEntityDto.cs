@@ -9,6 +9,9 @@ namespace Soenneker.Dtos.Entities.Named;
 [PublicOpenApiObject]
 public class NamedEntityDto : EntityDto
 {
+    /// <summary>
+    /// Gets or sets name.
+    /// </summary>
     [JsonPropertyName("name")]
     public virtual string Name { get; set; } = null!;
 }
