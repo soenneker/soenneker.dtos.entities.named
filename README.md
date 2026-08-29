@@ -3,11 +3,22 @@
 [![](https://img.shields.io/nuget/dt/soenneker.dtos.entities.named.svg?style=for-the-badge)](https://www.nuget.org/packages/soenneker.dtos.entities.named/)
 [![](https://img.shields.io/github/actions/workflow/status/soenneker/soenneker.dtos.entities.named/codeql.yml?label=CodeQL&style=for-the-badge)](https://github.com/soenneker/soenneker.dtos.entities.named/actions/workflows/codeql.yml)
 
-# ![](https://user-images.githubusercontent.com/4441470/224455560-91ed3ee7-f510-4041-a8d2-3fc093025112.png) Soenneker.Dtos.Entities.Named
-### A hard type mapping to NamedEntity
+# Soenneker.Dtos.Entities.Named
 
-## Installation
+Represents an entity with a stable identifier, lifecycle timestamps, and a human-readable display name.
 
-```
+## Install
+
+```bash
 dotnet add package Soenneker.Dtos.Entities.Named
 ```
+
+## What you get
+
+- `NamedEntityDto` — Represents an entity with a stable identifier, lifecycle timestamps, and a human-readable display name.
+
+## API at a glance
+
+| API | What it does | Result / important behavior |
+| --- | --- | --- |
+| `NamedEntityDto.Name` | Human-readable display name of the entity. | Human-readable display name of the entity. |
