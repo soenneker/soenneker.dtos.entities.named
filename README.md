@@ -5,20 +5,29 @@
 
 # Soenneker.Dtos.Entities.Named
 
-Represents an entity with a stable identifier, lifecycle timestamps, and a human-readable display name.
+Adds a human-readable name to the shared entity DTO identity and timestamp fields.
 
-## Install
+## Installation
 
 ```bash
 dotnet add package Soenneker.Dtos.Entities.Named
 ```
 
-## What you get
+## Usage
 
-- `NamedEntityDto` — Represents an entity with a stable identifier, lifecycle timestamps, and a human-readable display name.
+```csharp
+using Soenneker.Dtos.Entities.Named;
 
-## API at a glance
+var status = new NamedEntityDto
+{
+    Id = "active",
+    Name = "Active",
+    CreatedAt = DateTimeOffset.UtcNow
+};
+```
 
-| API | What it does | Result / important behavior |
-| --- | --- | --- |
-| `NamedEntityDto.Name` | Human-readable display name of the entity. | Human-readable display name of the entity. |
+The System.Text.Json wire shape uses `id`, `createdAt`, `modifiedAt`, and `name`. `ModifiedAt` defaults to null; `Id` and `Name` are not initialized by the parameterless constructor, and `CreatedAt` defaults to `default(DateTimeOffset)`.
+
+All properties are virtual for specialized DTOs. `NamedEntityDto` is marked with `PublicOpenApiObject` for Soenneker OpenAPI discovery.
+
+The model does not generate IDs or timestamps, validate names, enforce uniqueness, or normalize timestamps to UTC. Populate and validate it at the application boundary. Newtonsoft.Json naming follows the caller’s serializer configuration because these DTOs declare only System.Text.Json property-name attributes.
