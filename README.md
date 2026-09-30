@@ -29,5 +29,3 @@ var status = new NamedEntityDto
 The System.Text.Json wire shape uses `id`, `createdAt`, `modifiedAt`, and `name`. `ModifiedAt` defaults to null; `Id` and `Name` are not initialized by the parameterless constructor, and `CreatedAt` defaults to `default(DateTimeOffset)`.
 
 All properties are virtual for specialized DTOs. `NamedEntityDto` is marked with `PublicOpenApiObject` for Soenneker OpenAPI discovery.
-
-The model does not generate IDs or timestamps, validate names, enforce uniqueness, or normalize timestamps to UTC. Populate and validate it at the application boundary. Newtonsoft.Json naming follows the caller’s serializer configuration because these DTOs declare only System.Text.Json property-name attributes.
